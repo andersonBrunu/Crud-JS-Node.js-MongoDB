@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('partials/head.ejs') %>
+</head>
+
+<body>
+
+    <section class="register-container">
+
+        <h1>Cadastro</h1>
+
+        <form action="" class="formRegistration">
+
+            <div class="formContent">
+
+                <div class="formInfoPersonal">
+
+                    <label for="name">Nome: </label>
+                    <input type="text" name="name" id="name">
+
+
+                    <label for="email">Email: </label>
+                    <input type="email" name="email" id="email">
+
+                </div>
+
+
+                <div class="formInfoSkills">
+
+                    <h3>Tecnologias:</h3>
+                    <label for="js">JavaScript</label> <input type="checkbox" name="skills">
+                    <label for="html">HTML</label> <input type="checkbox" name="skills">
+                    <label for="css">CSS</label> <input type="checkbox" name="skills">
+                    <label for="php">PHP</label> <input type="checkbox" name="skills">
+                    <label for="python">PYTHON</label> <input type="checkbox" name="skills">
+
+                </div>
+
+            </div>
+
+            <button type="submit">Cadastrar</button>
+
+        </form>
+
+    </section>
+
+    <%- include('partials/foot.ejs') %>
+
+</body>
+
+</html>

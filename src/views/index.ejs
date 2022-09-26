@@ -11,7 +11,7 @@
 
         <h1>Cadastro</h1>
 
-        <form action="" class="formRegistration">
+        <form action="/add" method="POST" class="formRegistration">
 
             <div class="formContent">
 
@@ -30,19 +30,76 @@
                 <div class="formInfoSkills">
 
                     <h3>Tecnologias:</h3>
-                    <label for="js">JavaScript</label> <input type="checkbox" name="skills">
-                    <label for="html">HTML</label> <input type="checkbox" name="skills">
-                    <label for="css">CSS</label> <input type="checkbox" name="skills">
-                    <label for="php">PHP</label> <input type="checkbox" name="skills">
-                    <label for="python">PYTHON</label> <input type="checkbox" name="skills">
+                    <label for="js">JavaScript</label> <input type="checkbox" name="skills" value="JavaScript">
+                    <label for="html">HTML</label> <input type="checkbox" name="skills" value="HTML">
+                    <label for="css">CSS</label> <input type="checkbox" name="skills" value="CSS">
+                    <label for="php">PHP</label> <input type="checkbox" name="skills" value="PHP">
+                    <label for="python">PYTHON</label> <input type="checkbox" name="skills" value="PYTHON">
 
                 </div>
 
             </div>
 
-            <button type="submit">Cadastrar</button>
+            <button type="submit" name="btn">Cadastrar</button>
 
         </form>
+
+    </section>
+
+    <section class="list-clients-container">
+
+
+        <div class="list-clients-content">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+                        <th colspan="5">Clientes Cadastrados</th>
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <th>Nome</th>
+                        <th>Email</th>
+                        <th>Skills</th>
+                    </tr>
+
+                        <% clients.forEach(client => { %>
+                            <tr>
+
+                                <td class="td-name">
+                                    <%=client.name%>
+                                </td>
+                                <td class="td-email">
+                                    <%=client.email%>
+                                </td>
+                                <td class="td-skills">
+                                    <%=client.skills %>
+                                </td>
+                                <th class="td-btn-edit">
+                                    <button class="btn-edit" id="btn-edit">Editar</button>
+                                </th>
+                                <th class="td-btn-remove">
+                                    <button class="btn-remove" id="btn-remove" >Remover</button>
+                                </th>
+
+                            </tr>
+                        <% }); %> 
+  
+                </tbody>
+
+                <tfoot>
+
+                </tfoot>
+
+            </table>
+
+        </div>
 
     </section>
 

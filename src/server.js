@@ -1,21 +1,37 @@
 const express = require('express');
-const { reset } = require('nodemon');
 const path = require('path');
 
-const app = express();
-app.set('view engine', 'ejs')
+const database = require('./database');
+const router = require('./routers');
 
+const app = express();
+
+app.use(express.json());
+
+//Abrindo conexão com o banco de dados
+database.conect();
+
+//Definindo template engine
+app.set('view engine', 'ejs');
+
+//Receber dados atravez da requisição tipo post
+app.use(express.urlencoded({ extended: true }));
+
+//Definindo pasta de arquivos publicos
 app.use(express.static(path.join(__dirname, "public")));
+
+//Indicando que a pasta views esta dentro de scr
 app.set('views', path.join(__dirname, "views"));
 
 
-app.get('/', (req, res) => {
-    res.render('index');
-});
+//rotas
+app.use('/', router);
 
+//erro 404
 app.use('/', (req, res) => {
     res.send('pagina não encontrada');
 })
+
 
 const port = process.env.PORT || 8080;
 app.listen(port, () => { console.log(`Server runnig on port: ${port}`) })

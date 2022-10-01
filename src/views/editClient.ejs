@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('partials/head.ejs') %>
+</head>
+
+<body>
+
+
+    <section class="register-container">
+
+        <h1>Editar Cadastro</h1>
+
+        <form action="/edit/<%= cliente._id%>" class="formRegistration" method="POST">
+
+
+            <div class="formContent">
+
+                <div class="formInfoPersonal">
+
+                    <label for="name">Nome: </label>
+                    <input type="text" name="name" id="name" value="<%=cliente.name%>">
+
+                    <label for="email">Email: </label>
+                    <input type="email" name="email" id="email" value="<%=cliente.email%>">
+
+                </div>
+
+
+                <div class="formInfoSkills">
+
+                    <h3>Tecnologias:</h3>
+                    <label for="js">JavaScript</label> <input type="checkbox" name="skills" value="JavaScript">
+                    <label for="html">HTML</label> <input type="checkbox" name="skills" value="HTML">
+                    <label for="css">CSS</label> <input type="checkbox" name="skills" value="CSS">
+                    <label for="php">PHP</label> <input type="checkbox" name="skills" value="PHP">
+                    <label for="python">PYTHON</label> <input type="checkbox" name="skills" value="PYTHON">
+
+                </div>
+
+            </div>
+
+            <button type="submit" name="btn">Salvar</button>
+
+
+        </form>
+
+    </section>
+    
+    <a href="/" class="btn-voltar">Voltar</a>
+
+
+
+</body>
+
+</html>

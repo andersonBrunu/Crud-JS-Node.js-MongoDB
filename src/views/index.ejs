@@ -82,10 +82,10 @@
                                     <%=client.skills %>
                                 </td>
                                 <th class="td-btn-edit">
-                                    <button class="btn-edit" id="btn-edit">Editar</button>
+                                    <a href="/edit?id=<%=client._id%>"><button class="btn btn-edit" id="btn-edit">Editar</button></a>
                                 </th>
                                 <th class="td-btn-remove">
-                                    <button class="btn-remove" id="btn-remove" >Remover</button>
+                                    <a href="/remove/<%=client._id%>"><button class="btn btn-remove" id="btn-remove" >Remover</button></a>
                                 </th>
 
                             </tr>
